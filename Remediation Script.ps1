@@ -1,6 +1,6 @@
 $TempDir = [System.IO.Path]::GetTempPath()
 
-mkdir "$TempDir\HP"
+New-Item -ItemType Directory -Force -Path "$TempDir\HP"
 cd "$TempDir\HP"
 
 if (-not (Test-Path -path "C:\Program Files\HP\HP Firmware Installer\HP USB-C Dock G")) {
@@ -11,4 +11,4 @@ msiexec /i "C:\SWSetup\SP143343\Manageability\HPFirmwareInstaller64.msi" /qn /L*
 }
 
 cd "C:\Program Files\HP\HP Firmware Installer\HP USB-C Dock G5"
-.\HPFirmwareInstaller.exe -stage -silent
+.\HPFirmwareInstaller.exe -stage -silent -force

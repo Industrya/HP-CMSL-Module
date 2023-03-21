@@ -10,5 +10,5 @@ msiexec /i "C:\SWSetup\SP143343\Manageability\HPFirmwareInstaller64.msi" /qn /L*
     write-output "Path exists"
 }
 
-cd "C:\Program Files\HP\HP Firmware Installer\HP USB-C Dock G5"
-.\HPFirmwareInstaller.exe -stage -silent -force
+cd "C:\SWsetup\SP143343"
+.\HPFirmwareInstaller.exe -stage -silent

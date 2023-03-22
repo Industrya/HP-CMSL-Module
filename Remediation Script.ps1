@@ -10,5 +10,9 @@ msiexec /i "C:\SWSetup\SP143343\Manageability\HPFirmwareInstaller64.msi" /qn /L*
     write-output "Path exists"
 }
 
-cd "C:\SWsetup\SP143343"
-.\HPFirmwareInstaller.exe -stage -silent
+try {
+    Set-Location "C:\SWsetup\SP143343"
+    .\HPFirmwareInstaller.exe -stage -silent
+} catch {
+    Write-Output "Unable to install"
+}
